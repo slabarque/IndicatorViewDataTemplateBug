@@ -4,8 +4,9 @@
              x:Class="IndicatorViewDataTemplateBug.MainPage"
              xmlns:ns="clr-namespace:IndicatorViewDataTemplateBug"
              x:DataType="ns:MainPage">
-    <Grid RowDefinitions="Auto, *">
-        <ScrollView Orientation="Horizontal" Grid.Row="0">
+    <Grid RowDefinitions="Auto,Auto, *">
+        <Button Text="Load data" Command="{Binding Init}" Grid.Row="0"></Button>
+        <ScrollView Orientation="Horizontal" Grid.Row="1">
             <IndicatorView x:Name="indicatorView"
                    Margin="0,0,0,40"
                IndicatorColor="Gray"
@@ -18,7 +19,7 @@
                 </IndicatorView.IndicatorTemplate>
             </IndicatorView>
         </ScrollView>
-        <CarouselView  Grid.Row="1"
+        <CarouselView  Grid.Row="2"
                    ItemsSource="{Binding Dates}" 
                    IndicatorView="indicatorView"
                    Loop="False">
